@@ -1,0 +1,22 @@
+package com.nordstrom.product.etl;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.cassandra.CassandraDataAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+
+@SpringBootApplication
+@EnableScheduling
+@EnableAutoConfiguration(exclude={CassandraDataAutoConfiguration.class})
+public class PSETLApp
+{
+    public static void main( String[] args )
+    {
+        SpringApplication.run(PSETLApp.class);
+
+    }
+}
